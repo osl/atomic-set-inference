@@ -1,0 +1,65 @@
+
+=== LButtonPress;
+
+
+=== LControls;
+
+* Atomic sets:
+  - { floors=['floors[]'] }
+  - { floors[]=['$lock_F', 'downFlag', 'downPeople', 'upFlag', 'upPeople'] }
+
+
+=== LElevator;
+
+* Atomic sets:
+  - { controls=['floors'] }
+
+
+=== LFloor;
+
+* Atomic sets:
+  - { $lock_F, downFlag, downPeople, upFlag, upPeople }
+
+
+=== LLift;
+
+* Atomic sets:
+  - { controls=['floors'] }
+
+* Units of work:
+  addPeople(Lp/ArrayList;)V  [
+    1: unitfor( ['$lock_L', '$lock_L', 'elementData', 'modCount', 'size'] )
+  ]
+
+
+=== LRunner;
+
+
+=== Latomicsets/OrderedLock;
+
+
+=== Lp/AbstractCollection;
+
+
+=== Lp/AbstractList;
+
+* Atomic sets:
+  - { $lock_L, modCount }
+
+
+=== Lp/AbstractList_Itr;
+
+* Atomic sets:
+  - { abstractList=['elementData', 'modCount', 'size'] }
+
+* Units of work:
+  <init>(Lp/AbstractList;Latomicsets/OrderedLock;)V  [
+    1: unitfor( ['modCount'] )
+  ]
+
+
+=== Lp/ArrayList;
+
+* Atomic sets:
+  - { $lock_L, elementData, size }
+

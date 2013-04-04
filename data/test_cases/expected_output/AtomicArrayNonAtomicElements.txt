@@ -1,0 +1,18 @@
+
+=== Ledu/illinois/cs/osl/aj/testcases/AtomicArrayNonAtomicElements$PersonDB;
+
+* Atomic sets:
+  - { entries, lock }
+
+
+=== Ledu/illinois/cs/osl/aj/testcases/AtomicArrayNonAtomicElements$WorkerThread;
+
+* Atomic sets:
+  - { database=['entries', 'lock'] }
+
+
+=== Ledu/illinois/cs/osl/aj/testcases/AtomicArrayNonAtomicElements;
+
+
+=== Ledu/illinois/cs/osl/aj/testcases/common/IteratingThread;
+

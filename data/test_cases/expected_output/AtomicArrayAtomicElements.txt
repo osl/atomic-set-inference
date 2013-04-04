@@ -1,0 +1,19 @@
+
+=== Ledu/illinois/cs/osl/aj/testcases/AtomicArrayAtomicElements$PersonDB;
+
+* Atomic sets:
+  - { entries=['entries[]'] }
+  - { entries[] }
+
+
+=== Ledu/illinois/cs/osl/aj/testcases/AtomicArrayAtomicElements$WorkerThread;
+
+* Atomic sets:
+  - { database=['entries'] }
+
+
+=== Ledu/illinois/cs/osl/aj/testcases/AtomicArrayAtomicElements;
+
+
+=== Ledu/illinois/cs/osl/aj/testcases/common/IteratingThread;
+

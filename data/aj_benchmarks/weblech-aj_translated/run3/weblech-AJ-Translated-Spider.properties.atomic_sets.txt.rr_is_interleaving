@@ -1,0 +1,63 @@
+
+=== Lweblech/spider/DownloadQueue;
+
+* Atomic sets:
+  - { averageURLsToDownload, boringURLsToDownload, config=['boringURLSubstrings', 'depthFirst', 'interestingURLSubstrings'], interestingURLsToDownload, urlsInQueue }
+
+
+=== Lweblech/spider/HTMLParser;
+
+
+=== Lweblech/spider/Spider;
+
+* Atomic sets:
+  - { $lock_S, config=['checkpointInterval', 'refreshHTMLs', 'saveRootDirectory', 'userAgent'], downloadsInProgress, lastCheckpoint, queue=['averageURLsToDownload', 'boringURLsToDownload', 'config', 'interestingURLsToDownload', 'urlsInQueue'], urlsDownloading }
+
+
+=== Lweblech/spider/SpiderConfig;
+
+* Atomic sets:
+  - { boringURLSubstrings }
+  - { checkpointInterval }
+  - { depthFirst }
+  - { interestingURLSubstrings }
+  - { maxDepth }
+  - { refreshHTMLs }
+  - { saveRootDirectory }
+  - { urlMatch }
+  - { userAgent }
+
+* Witnessed non-atomic fields: { basicAuthPassword, basicAuthUser }
+
+
+=== Lweblech/spider/SpiderRunnable;
+
+* Witnessed non-atomic fields: { config, quit, running, spider }
+
+
+=== Lweblech/spider/UDorSWrapper;
+
+* Atomic sets:
+  - { config=['urlMatch'] }
+
+
+=== Lweblech/spider/URLGetter;
+
+* Atomic sets:
+  - { config=['userAgent'] }
+
+
+=== Lweblech/spider/URLObject;
+
+* Atomic sets:
+  - { config=['saveRootDirectory'] }
+
+
+=== Lweblech/spider/URLToDownload;
+
+
+=== Lweblech/ui/TextSpider;
+
+
+=== Lweblech/util/Log4j;
+

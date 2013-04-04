@@ -1,0 +1,18 @@
+
+=== Ledu/illinois/cs/osl/aj/testcases/SingleAtomicSet$MyPerson;
+
+
+=== Ledu/illinois/cs/osl/aj/testcases/SingleAtomicSet$WorkerThread;
+
+
+=== Ledu/illinois/cs/osl/aj/testcases/SingleAtomicSet;
+
+
+=== Ledu/illinois/cs/osl/aj/testcases/common/IteratingThread;
+
+
+=== Ledu/illinois/cs/osl/aj/testcases/common/Person;
+
+* Atomic sets:
+  - { firstName, lastName }
+

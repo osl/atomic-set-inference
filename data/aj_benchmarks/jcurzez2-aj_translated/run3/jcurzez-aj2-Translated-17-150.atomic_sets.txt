@@ -1,0 +1,250 @@
+
+=== Latomicsets/OrderedLock;
+
+* Atomic sets:
+  - { myIndex }
+
+* Units of work:
+  compareTo(Ljava/lang/Object;)I  [
+    1: unitfor( ['myIndex'] )
+  ]
+
+
+=== Ledu/illinois/cs/osl/aj/jcurzezFuzzer/CursorFuzzer;
+
+* Atomic sets:
+  - { cursor=['$lock_C', 'rectangle', 'visibility'] }
+
+
+=== Ledu/illinois/cs/osl/aj/jcurzezFuzzer/DrawingPenFuzzer;
+
+
+=== Ledu/illinois/cs/osl/aj/jcurzezFuzzer/FillingPenFuzzer;
+
+
+=== Ledu/illinois/cs/osl/aj/jcurzezFuzzer/FuzzEverything;
+
+
+=== Ledu/illinois/cs/osl/aj/jcurzezFuzzer/Fuzzer;
+
+
+=== Ledu/illinois/cs/osl/aj/jcurzezFuzzer/PenFuzzer;
+
+* Atomic sets:
+  - { pen=['attribute', 'background', 'blankCell', 'foreground'] }
+
+
+=== Ledu/illinois/cs/osl/aj/jcurzezFuzzer/RectangleFuzzer;
+
+* Atomic sets:
+  - { rectangle=['$lock_R', 'drawingPen', 'fillingPen', 'height', 'left', 'top', 'width'] }
+
+
+=== Ledu/illinois/cs/osl/aj/jcurzezFuzzer/WindowFuzzer;
+
+* Atomic sets:
+  - { window=['$lock_B', 'buffer', 'cursor', 'id', 'internalDrawer', 'internalOldX', 'internalOldY', 'internalX', 'isBufferShared', 'linewrap', 'moved', 'parent', 'scroll', 'stressConcurrency'] }
+
+
+=== Lorg/nongnu/savannah/jcurzez/AbstractWindow$CoordinatedCell;
+
+* Units of work:
+  <init>(Lorg/nongnu/savannah/jcurzez/Cell;II)V  [
+    1: unitfor( ['attribute', 'background', 'character', 'foreground', 'hasChanged'] )
+  ]
+
+
+=== Lorg/nongnu/savannah/jcurzez/AbstractWindow;
+
+* Atomic sets:
+  - { $lock_B=['myIndex'], buffer=['buffer[]'], cursor=['$lock_C', 'rectangle', 'x', 'y'], internalBlank, internalDrawer, internalOldX, internalOldY, internalX, internalY, isBufferShared, linewrap, parent=['$lock_B', 'buffer', 'cursor', 'isBufferShared', 'parent'], scroll, stressConcurrency }
+  - { buffer[]=['buffer[][]'] }
+  - { buffer[][]=['attribute', 'background', 'character', 'foreground', 'hasChanged'] }
+  - { id }
+
+* Units of work:
+  updateCursorIfUnchanged(Lorg/nongnu/savannah/jcurzez/Cursor;)V  [
+    1: unitfor( ['$lock_C', 'rectangle', 'x', 'y'] )
+  ]
+  updateCursorIfUnchanged(Lorg/nongnu/savannah/jcurzez/Cursor;)V$27$synchronized  [
+    1: unitfor( ['rectangle', 'x', 'y'] )
+  ]
+  updateCursorIfUnchanged(Lorg/nongnu/savannah/jcurzez/Cursor;)V$31$synchronized  [
+    1: unitfor( ['rectangle', 'x', 'y'] )
+  ]
+
+
+=== Lorg/nongnu/savannah/jcurzez/Area;
+
+* Atomic sets:
+  - { $lock_B, parent=['$lock_B', 'parent'] }
+
+* Units of work:
+  printCell(IILorg/nongnu/savannah/jcurzez/Cell;)V  [
+    3: unitfor( ['attribute'] )
+  ]
+  printCell(IILorg/nongnu/savannah/jcurzez/Cell;)V$4$synchronized  [
+    3: unitfor( ['attribute'] )
+  ]
+
+
+=== Lorg/nongnu/savannah/jcurzez/Attribute;
+
+* Atomic sets:
+  - { value }
+
+* Units of work:
+  and(Lorg/nongnu/savannah/jcurzez/Attribute;)Lorg/nongnu/savannah/jcurzez/Attribute;  [
+    1: unitfor( ['value'] )
+  ]
+  andNot(Lorg/nongnu/savannah/jcurzez/Attribute;)Lorg/nongnu/savannah/jcurzez/Attribute;  [
+    1: unitfor( ['value'] )
+  ]
+  equals(Ljava/lang/Object;)Z  [
+    1: unitfor( ['value'] )
+  ]
+  hasAttribute(Lorg/nongnu/savannah/jcurzez/Attribute;)Z  [
+    1: unitfor( ['value'] )
+  ]
+
+
+=== Lorg/nongnu/savannah/jcurzez/BackgroundColor;
+
+
+=== Lorg/nongnu/savannah/jcurzez/Cell;
+
+* Atomic sets:
+  - { background=['realColor'], character, foreground=['realColor'], hasChanged }
+
+* Witnessed non-atomic fields: { attribute }
+
+* Units of work:
+  <init>(Lorg/nongnu/savannah/jcurzez/Cell;)V  [
+    1: unitfor( ['attribute', 'background', 'character', 'foreground', 'hasChanged'] )
+  ]
+  copyInto(Lorg/nongnu/savannah/jcurzez/Cell;)V  [
+    1: unitfor( ['attribute', 'background', 'character', 'foreground', 'hasChanged'] )
+  ]
+  hasSameDecoration(Lorg/nongnu/savannah/jcurzez/Cell;)Z  [
+    1: unitfor( ['attribute'] )
+  ]
+
+
+=== Lorg/nongnu/savannah/jcurzez/Color;
+
+* Atomic sets:
+  - { name }
+  - { realColor }
+
+
+=== Lorg/nongnu/savannah/jcurzez/Cursor;
+
+* Atomic sets:
+  - { $lock_C, rectangle=['$lock_R', 'drawingPen', 'fillingPen', 'height', 'left', 'top', 'width'], x, y }
+  - { visibility }
+
+
+=== Lorg/nongnu/savannah/jcurzez/FillingPen;
+
+* Atomic sets:
+  - { blankCell=['attribute', 'background', 'character', 'foreground', 'hasChanged'] }
+
+
+=== Lorg/nongnu/savannah/jcurzez/ForegroundColor;
+
+
+=== Lorg/nongnu/savannah/jcurzez/InconsistentCoordinateException;
+
+
+=== Lorg/nongnu/savannah/jcurzez/Parent;
+
+* Atomic sets:
+  - { $lock_B=['myIndex'], cursor=['$lock_C', 'rectangle', 'x', 'y'] }
+
+* Witnessed non-atomic fields: { frame }
+
+
+=== Lorg/nongnu/savannah/jcurzez/Pen;
+
+* Atomic sets:
+  - { attribute=['value'], background=['name'], foreground=['name'] }
+
+* Units of work:
+  <init>(Lorg/nongnu/savannah/jcurzez/Pen;)V  [
+    1: unitfor( ['attribute', 'background', 'foreground'] )
+  ]
+
+
+=== Lorg/nongnu/savannah/jcurzez/Rectangle;
+
+* Atomic sets:
+  - { $lock_R, height, left, top, width }
+  - { drawingPen=['attribute', 'background', 'foreground'] }
+  - { fillingPen=['blankCell'] }
+
+* Units of work:
+  contains_internal(Lorg/nongnu/savannah/jcurzez/Rectangle;)Z  [
+    1: unitfor( ['height', 'left', 'top', 'width'] )
+  ]
+  move_internal(IILorg/nongnu/savannah/jcurzez/Rectangle;)V  [
+    3: unitfor( ['height', 'left', 'top', 'width'] )
+  ]
+
+
+=== Lorg/nongnu/savannah/jcurzez/Screen$JCurzezHook;
+
+
+=== Lorg/nongnu/savannah/jcurzez/Screen;
+
+* Atomic sets:
+  - { $lock_B }
+
+* Units of work:
+  printCell(IILorg/nongnu/savannah/jcurzez/Cell;)V  [
+    3: unitfor( ['attribute'] )
+  ]
+  printCell(IILorg/nongnu/savannah/jcurzez/Cell;)V$4$synchronized  [
+    3: unitfor( ['attribute'] )
+  ]
+
+
+=== Lorg/nongnu/savannah/jcurzez/Window;
+
+* Atomic sets:
+  - { $lock_B=['myIndex'], cursor=['rectangle'], moved, parent=['$lock_B', 'buffer', 'cursor', 'internalBlank', 'internalDrawer', 'internalOldX', 'internalOldY', 'internalX', 'internalY', 'parent', 'scroll', 'stressConcurrency'] }
+
+* Units of work:
+  move_internal(Lorg/nongnu/savannah/jcurzez/Rectangle;Lorg/nongnu/savannah/jcurzez/Rectangle;II)V  [
+    1: unitfor( ['height', 'left', 'top', 'width'] )
+    2: unitfor( ['height', 'left', 'top', 'width'] )
+  ]
+
+
+=== Lorg/nongnu/savannah/jcurzez/frame/OldStyleFrame;
+
+
+=== Lorg/nongnu/savannah/jcurzez/frame/SingleFrame;
+
+
+=== Lorg/nongnu/savannah/jcurzez/io/JcurzezOutputStream;
+
+* Atomic sets:
+  - { screen=['$lock_B', 'buffer', 'cursor', 'internalBlank', 'internalDrawer', 'internalOldX', 'internalOldY', 'internalX', 'internalY', 'stressConcurrency'] }
+
+
+=== Lorg/nongnu/savannah/jcurzez/peer/ansi/PeerScreen;
+
+* Atomic sets:
+  - { $lock_P, columns, completed, lines, previousCell=['attribute'], previousX, previousY, text }
+
+* Units of work:
+  attributeToEscapeSequence_internal(Lorg/nongnu/savannah/jcurzez/Attribute;)V  [
+    1: unitfor( ['value'] )
+  ]
+  printCell(IILorg/nongnu/savannah/jcurzez/Cell;)V  [
+    3: unitfor( ['attribute', 'background', 'foreground'] )
+  ]
+  printCell(IILorg/nongnu/savannah/jcurzez/Cell;)V$4$synchronized  [
+    3: unitfor( ['attribute', 'background', 'foreground'] )
+  ]
+

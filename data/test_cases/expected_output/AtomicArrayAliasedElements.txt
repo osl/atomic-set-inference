@@ -1,0 +1,25 @@
+
+=== Ledu/illinois/cs/osl/aj/testcases/AtomicArrayAliasedElements$PersonDB;
+
+* Atomic sets:
+  - { entries=['entries[]'] }
+  - { entries[]=['firstName'] }
+
+
+=== Ledu/illinois/cs/osl/aj/testcases/AtomicArrayAliasedElements$WorkerThread;
+
+* Atomic sets:
+  - { database=['entries'] }
+
+
+=== Ledu/illinois/cs/osl/aj/testcases/AtomicArrayAliasedElements;
+
+
+=== Ledu/illinois/cs/osl/aj/testcases/common/IteratingThread;
+
+
+=== Ledu/illinois/cs/osl/aj/testcases/common/Person;
+
+* Atomic sets:
+  - { firstName }
+

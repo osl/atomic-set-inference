@@ -1,0 +1,67 @@
+
+=== Lweblech/spider/DownloadQueue;
+
+* Atomic sets:
+  - { averageURLsToDownload, boringURLsToDownload, config=['boringURLSubstrings', 'depthFirst', 'interestingURLSubstrings'], interestingURLsToDownload, urlsInQueue }
+
+
+=== Lweblech/spider/DumbAuthenticator;
+
+
+=== Lweblech/spider/HTMLParser;
+
+
+=== Lweblech/spider/Spider;
+
+* Atomic sets:
+  - { config=['basicAuthPassword', 'basicAuthUser', 'boringURLSubstrings', 'checkpointInterval', 'depthFirst', 'interestingURLSubstrings', 'refreshHTMLs', 'saveRootDirectory', 'urlMatch', 'userAgent'], downloadsInProgress, lastCheckpoint, queue=['averageURLsToDownload', 'boringURLsToDownload', 'config', 'interestingURLsToDownload', 'urlsInQueue'], quit, running, urlsDownloadedOrScheduled, urlsDownloading }
+
+
+=== Lweblech/spider/SpiderConfig;
+
+* Atomic sets:
+  - { basicAuthPassword, basicAuthUser }
+  - { boringURLSubstrings }
+  - { checkpointInterval }
+  - { depthFirst }
+  - { interestingURLSubstrings }
+  - { maxDepth }
+  - { refreshHTMLs }
+  - { saveRootDirectory }
+  - { urlMatch }
+  - { userAgent }
+
+
+=== Lweblech/spider/URLGetter;
+
+* Atomic sets:
+  - { config=['basicAuthPassword', 'basicAuthUser', 'userAgent'] }
+
+* Units of work:
+  <init>(Lweblech/spider/SpiderConfig;)V  [
+    1: unitfor( ['basicAuthPassword', 'basicAuthUser'] )
+  ]
+
+
+=== Lweblech/spider/URLObject;
+
+* Atomic sets:
+  - { config=['saveRootDirectory'] }
+
+* Units of work:
+  <init>(Ljava/net/URL;Lweblech/spider/SpiderConfig;)V  [
+    2: unitfor( ['saveRootDirectory'] )
+  ]
+
+
+=== Lweblech/spider/URLToDownload;
+
+
+=== Lweblech/ui/TextSpider;
+
+
+=== Lweblech/util/Log4j;
+
+
+=== Lweblech/util/Logger;
+

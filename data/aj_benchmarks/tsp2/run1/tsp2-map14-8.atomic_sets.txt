@@ -1,0 +1,38 @@
+
+=== LMinimizer;
+
+* Atomic sets:
+  - { MinLock, MinTour, MinTourLen }
+
+
+=== LPrioQElement;
+
+* Atomic sets:
+  - { index, priority }
+
+
+=== LTourCreator;
+
+* Atomic sets:
+  - { Done, PrioQ=['PrioQ[]'], PrioQLast, TourLock, TourStack, TourStackTop, Tours=['Tours[]'], minimizer, weights }
+  - { PrioQ[]=['index', 'priority'] }
+  - { Tours[] }
+
+* Units of work:
+  less_than(LPrioQElement;LPrioQElement;)Z  [
+    1: unitfor( ['priority'] )
+    2: unitfor( ['priority'] )
+  ]
+
+
+=== LTourElement;
+
+
+=== LTsp;
+
+
+=== LTspSolver;
+
+* Atomic sets:
+  - { minimizer=['MinLock', 'MinTour'], tourCreator=['Done', 'PrioQ', 'TourLock', 'TourStack', 'TourStackTop', 'Tours', 'minimizer', 'weights'] }
+

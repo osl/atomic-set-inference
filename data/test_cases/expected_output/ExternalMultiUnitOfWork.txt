@@ -1,0 +1,31 @@
+
+=== Ledu/illinois/cs/osl/aj/testcases/ExternalMultiUnitOfWork$AddressComparator;
+
+* Units of work:
+  compare(Ledu/illinois/cs/osl/aj/testcases/common/Address;Ledu/illinois/cs/osl/aj/testcases/common/Address;)Z  [
+    0: unitfor( ['city', 'houseNumber', 'street', 'zip'] )
+    1: unitfor( ['city', 'houseNumber', 'street', 'zip'] )
+  ]
+
+
+=== Ledu/illinois/cs/osl/aj/testcases/ExternalMultiUnitOfWork$MyAddress;
+
+
+=== Ledu/illinois/cs/osl/aj/testcases/ExternalMultiUnitOfWork$WorkerThread;
+
+* Atomic sets:
+  - { a1=['city', 'houseNumber', 'street', 'zip'], a2=['city', 'houseNumber', 'street', 'zip'] }
+
+
+=== Ledu/illinois/cs/osl/aj/testcases/ExternalMultiUnitOfWork;
+
+
+=== Ledu/illinois/cs/osl/aj/testcases/common/Address;
+
+* Atomic sets:
+  - { city, zip }
+  - { houseNumber, street }
+
+
+=== Ledu/illinois/cs/osl/aj/testcases/common/IteratingThread;
+

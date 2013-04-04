@@ -1,0 +1,898 @@
+
+=== Lcollections/AbstractCollection;
+
+* Units of work:
+  addAll(Lcollections/Collection;)Z  [
+    1: unitfor( ['c'] )
+  ]
+  containsAll(Lcollections/Collection;)Z  [
+    1: unitfor( ['c'] )
+  ]
+  removeAll(Lcollections/Collection;)Z  [
+    1: unitfor( ['c', 'mutex'] )
+  ]
+  retainAll(Lcollections/Collection;)Z  [
+    1: unitfor( ['c', 'mutex'] )
+  ]
+
+
+=== Lcollections/AbstractList;
+
+* Atomic sets:
+  - { modCount }
+
+* Units of work:
+  equals(Ljava/lang/Object;)Z  [
+    1: unitfor( ['list'] )
+  ]
+
+
+=== Lcollections/AbstractMap;
+
+* Units of work:
+  equals(Ljava/lang/Object;)Z  [
+    1: unitfor( ['m', 'mutex'] )
+  ]
+  putAll(Lcollections/Map;)V  [
+    1: unitfor( ['entrySet', 'm', 'mutex'] )
+  ]
+
+
+=== Lcollections/AbstractSequentialList;
+
+
+=== Lcollections/AbstractSet;
+
+* Units of work:
+  equals(Ljava/lang/Object;)Z  [
+    1: unitfor( ['c', 'mutex'] )
+  ]
+  removeAll(Lcollections/Collection;)Z  [
+    1: unitfor( ['c', 'mutex'] )
+  ]
+
+
+=== Lcollections/ArrayList$Itr;
+
+* Atomic sets:
+  - { this$0=['elementData', 'modCount', 'size'] }
+
+* Units of work:
+  <init>(Lcollections/ArrayList;)V  [
+    1: unitfor( [] )
+  ]
+  <init>(Lcollections/ArrayList;Lcollections/ArrayList$Itr;)V  [
+    1: unitfor( ['modCount'] )
+  ]
+  <init>(Lcollections/ArrayList;Lcollections/ArrayList$Itr;Lcollections/ArrayList$Itr;)V  [
+    1: unitfor( [] )
+  ]
+
+
+=== Lcollections/ArrayList$ListItr;
+
+* Units of work:
+  <init>(Lcollections/ArrayList;I)V  [
+    1: unitfor( ['modCount'] )
+  ]
+
+
+=== Lcollections/ArrayList$SubList;
+
+* Atomic sets:
+  - { parent=['modCount'] }
+
+* Units of work:
+  <init>(Lcollections/ArrayList;Lcollections/AbstractList;III)V  [
+    1: unitfor( ['modCount'] )
+    2: unitfor( ['modCount'] )
+  ]
+
+
+=== Lcollections/ArrayList;
+
+* Atomic sets:
+  - { elementData=['elementData[]'], modCount, size }
+  - { elementData[] }
+
+* Units of work:
+  access$1(Lcollections/ArrayList;)I  [
+    0: unitfor( ['size'] )
+  ]
+  access$2(Lcollections/ArrayList;)[Ljava/lang/Object;  [
+    0: unitfor( ['elementData'] )
+  ]
+  addAll(ILcollections/Collection;)Z  [
+    2: unitfor( ['c', 'mutex'] )
+  ]
+  addAll(Lcollections/Collection;)Z  [
+    1: unitfor( ['c', 'mutex'] )
+  ]
+  batchRemove(Lcollections/Collection;Z)Z  [
+    1: unitfor( ['c', 'mutex'] )
+  ]
+  removeAll(Lcollections/Collection;)Z  [
+    1: unitfor( ['c', 'mutex'] )
+  ]
+  retainAll(Lcollections/Collection;)Z  [
+    1: unitfor( ['c', 'mutex'] )
+  ]
+
+
+=== Lcollections/Arrays;
+
+* Units of work:
+  fill([Ljava/lang/Object;Ljava/lang/Object;)V  [
+    0: unitfor( ['0[]'] )
+  ]
+
+
+=== Lcollections/Collections$EmptyIterator;
+
+
+=== Lcollections/Collections$EmptyList;
+
+
+=== Lcollections/Collections$EmptyMap;
+
+
+=== Lcollections/Collections$EmptySet;
+
+
+=== Lcollections/Collections$SynchronizedCollection;
+
+* Atomic sets:
+  - { c=['c', 'elementCount', 'elementData', 'header', 'm', 'map', 'modCount', 'size', 'this$0'], mutex }
+
+* Units of work:
+  addAll(Lcollections/Collection;)Z  [
+    1: unitfor( ['c', 'mutex'] )
+  ]
+  addAll(Lcollections/Collection;)Z$4$synchronized  [
+    1: unitfor( ['c', 'mutex'] )
+  ]
+  containsAll(Lcollections/Collection;)Z  [
+    1: unitfor( ['c', 'mutex'] )
+  ]
+  containsAll(Lcollections/Collection;)Z$4$synchronized  [
+    1: unitfor( ['c'] )
+  ]
+  removeAll(Lcollections/Collection;)Z  [
+    1: unitfor( ['c', 'mutex'] )
+  ]
+  removeAll(Lcollections/Collection;)Z$4$synchronized  [
+    1: unitfor( ['c', 'mutex'] )
+  ]
+  retainAll(Lcollections/Collection;)Z  [
+    1: unitfor( ['c', 'mutex'] )
+  ]
+  retainAll(Lcollections/Collection;)Z$4$synchronized  [
+    1: unitfor( ['c', 'mutex'] )
+  ]
+
+
+=== Lcollections/Collections$SynchronizedList;
+
+* Atomic sets:
+  - { list=['capacityIncrement', 'elementCount', 'elementData', 'header', 'modCount', 'size'], mutex }
+
+* Units of work:
+  addAll(ILcollections/Collection;)Z  [
+    2: unitfor( ['c', 'list', 'mutex', 'mutex'] )
+  ]
+  addAll(ILcollections/Collection;)Z$4$synchronized  [
+    2: unitfor( ['c', 'list', 'mutex'] )
+  ]
+  equals(Ljava/lang/Object;)Z  [
+    1: unitfor( ['list', 'mutex'] )
+  ]
+  equals(Ljava/lang/Object;)Z$4$synchronized  [
+    1: unitfor( ['list'] )
+  ]
+
+
+=== Lcollections/Collections$SynchronizedMap;
+
+* Atomic sets:
+  - { entrySet, keySet, m=['accessOrder', 'comparator', 'count', 'entrySet', 'header', 'keySet', 'loadFactor', 'modCount', 'navigableKeySet', 'queue', 'root', 'size', 'table', 'threshold', 'values'], mutex, values }
+
+* Units of work:
+  equals(Ljava/lang/Object;)Z  [
+    1: unitfor( ['entrySet', 'm', 'mutex'] )
+  ]
+  equals(Ljava/lang/Object;)Z$4$synchronized  [
+    1: unitfor( ['entrySet', 'm', 'mutex'] )
+  ]
+  putAll(Lcollections/Map;)V  [
+    1: unitfor( ['entrySet', 'm', 'mutex'] )
+  ]
+  putAll(Lcollections/Map;)V$4$synchronized  [
+    1: unitfor( ['entrySet', 'm', 'mutex'] )
+  ]
+
+
+=== Lcollections/Collections$SynchronizedSet;
+
+* Atomic sets:
+  - { c=['m', 'map'], mutex }
+
+* Units of work:
+  equals(Ljava/lang/Object;)Z  [
+    1: unitfor( ['c', 'c', 'mutex', 'mutex'] )
+  ]
+  equals(Ljava/lang/Object;)Z$4$synchronized  [
+    1: unitfor( ['c', 'c', 'mutex'] )
+  ]
+
+
+=== Lcollections/Collections$SynchronizedSortedMap;
+
+* Atomic sets:
+  - { mutex, sm=['comparator', 'root'] }
+
+
+=== Lcollections/Collections$SynchronizedSortedSet;
+
+* Atomic sets:
+  - { mutex, ss=['m'] }
+
+
+=== Lcollections/Collections;
+
+
+=== Lcollections/ConcurrentModificationException;
+
+
+=== Lcollections/Dictionary;
+
+
+=== Lcollections/HashMap$Entry;
+
+* Atomic sets:
+  - { hash, key, next=['hash', 'key', 'next', 'value'], value }
+
+
+=== Lcollections/HashMap$EntryIterator;
+
+* Units of work:
+  <init>(Lcollections/HashMap;)V  [
+    1: unitfor( ['size', 'table'] )
+  ]
+  <init>(Lcollections/HashMap;Lcollections/HashMap$EntryIterator;)V  [
+    1: unitfor( ['size', 'table'] )
+  ]
+
+
+=== Lcollections/HashMap$EntrySet;
+
+* Atomic sets:
+  - { this$0=['header', 'modCount', 'size', 'table'] }
+
+
+=== Lcollections/HashMap$HashIterator;
+
+* Atomic sets:
+  - { current=['hash', 'key', 'next'], next=['next'], this$0=['modCount', 'size', 'table'] }
+
+* Units of work:
+  <init>(Lcollections/HashMap;)V  [
+    1: unitfor( ['table'] )
+  ]
+
+
+=== Lcollections/HashMap$KeyIterator;
+
+* Units of work:
+  <init>(Lcollections/HashMap;)V  [
+    1: unitfor( ['modCount', 'table'] )
+  ]
+  <init>(Lcollections/HashMap;Lcollections/HashMap$KeyIterator;)V  [
+    1: unitfor( ['modCount', 'table'] )
+  ]
+
+
+=== Lcollections/HashMap$KeySet;
+
+* Atomic sets:
+  - { this$0=['header', 'modCount', 'table'] }
+
+
+=== Lcollections/HashMap$Values;
+
+
+=== Lcollections/HashMap;
+
+* Atomic sets:
+  - { entrySet, modCount, size, table=['table[]'], threshold }
+  - { keySet }
+  - { table[]=['after', 'before', 'hash', 'key', 'next', 'value'] }
+  - { values }
+
+* Units of work:
+  putAll(Lcollections/Map;)V  [
+    1: unitfor( ['entrySet', 'm', 'mutex'] )
+  ]
+
+
+=== Lcollections/HashSet;
+
+* Atomic sets:
+  - { map=['accessOrder', 'header', 'keySet', 'modCount', 'size', 'table', 'threshold'] }
+
+
+=== Lcollections/Hashtable$Entry;
+
+* Atomic sets:
+  - { hash, next=['hash', 'key', 'next', 'value'], value }
+  - { key }
+
+
+=== Lcollections/Hashtable$EntrySet;
+
+* Atomic sets:
+  - { this$0=['table'] }
+
+
+=== Lcollections/Hashtable$Enumerator;
+
+* Atomic sets:
+  - { entry=['next'] }
+  - { table=['table[]'] }
+  - { table[] }
+  - { this$0=['modCount'] }
+
+* Units of work:
+  <init>(Lcollections/Hashtable;IZ)V  [
+    1: unitfor( ['modCount', 'table'] )
+  ]
+
+
+=== Lcollections/Hashtable$KeySet;
+
+
+=== Lcollections/Hashtable$ValueCollection;
+
+
+=== Lcollections/Hashtable;
+
+* Atomic sets:
+  - { entrySet, loadFactor, modCount, table=['table[]'], threshold }
+  - { keySet }
+  - { table[]=['hash', 'key', 'next', 'value'] }
+  - { values }
+
+* Witnessed non-atomic fields: { count }
+
+* Units of work:
+  access$0(Lcollections/Hashtable;I)Lcollections/Iterator;  [
+    0: unitfor( ['modCount', 'table'] )
+  ]
+  access$2(Lcollections/Hashtable;)[Lcollections/Hashtable$Entry;  [
+    0: unitfor( ['table'] )
+  ]
+  access$3(Lcollections/Hashtable;)I  [
+    0: unitfor( ['modCount'] )
+  ]
+  equals(Ljava/lang/Object;)Z  [
+    1: unitfor( ['m', 'mutex'] )
+  ]
+  putAll(Lcollections/Map;)V  [
+    1: unitfor( ['entrySet', 'mutex'] )
+  ]
+
+
+=== Lcollections/IdentityHashMap$EntryIterator;
+
+* Atomic sets:
+  - { this$0=['table'], traversalTable=['traversalTable[]'] }
+  - { traversalTable[] }
+
+* Units of work:
+  <init>(Lcollections/IdentityHashMap;)V  [
+    1: unitfor( ['modCount', 'table'] )
+  ]
+  <init>(Lcollections/IdentityHashMap;Lcollections/IdentityHashMap$EntryIterator;)V  [
+    1: unitfor( ['modCount', 'table'] )
+  ]
+
+
+=== Lcollections/IdentityHashMap$EntrySet;
+
+* Atomic sets:
+  - { this$0=['modCount', 'size', 'table'] }
+
+
+=== Lcollections/IdentityHashMap$IdentityHashMapIterator;
+
+* Atomic sets:
+  - { this$0=['modCount'] }
+  - { traversalTable=['traversalTable[]'] }
+  - { traversalTable[] }
+
+* Units of work:
+  <init>(Lcollections/IdentityHashMap;)V  [
+    1: unitfor( ['modCount', 'table'] )
+  ]
+  <init>(Lcollections/IdentityHashMap;Lcollections/IdentityHashMap$IdentityHashMapIterator;)V  [
+    1: unitfor( ['modCount', 'table'] )
+  ]
+
+
+=== Lcollections/IdentityHashMap$KeySet;
+
+
+=== Lcollections/IdentityHashMap$Values;
+
+
+=== Lcollections/IdentityHashMap;
+
+* Atomic sets:
+  - { entrySet, modCount, size, table=['table[]'], threshold }
+  - { keySet }
+  - { table[] }
+  - { values }
+
+* Units of work:
+  access$0(Lcollections/IdentityHashMap;)I  [
+    0: unitfor( ['size'] )
+  ]
+  access$1(Lcollections/IdentityHashMap;)[Ljava/lang/Object;  [
+    0: unitfor( ['table'] )
+  ]
+  access$2(Lcollections/IdentityHashMap;)I  [
+    0: unitfor( ['modCount'] )
+  ]
+  access$8(Lcollections/IdentityHashMap;Ljava/lang/Object;Ljava/lang/Object;)Z  [
+    0: unitfor( ['table'] )
+  ]
+  equals(Ljava/lang/Object;)Z  [
+    1: unitfor( ['entrySet', 'mutex'] )
+  ]
+  putAll(Lcollections/Map;)V  [
+    1: unitfor( ['entrySet', 'm', 'mutex'] )
+  ]
+
+
+=== Lcollections/LinkedHashMap$Entry;
+
+* Atomic sets:
+  - { after=['after', 'before', 'value'], before=['after', 'before'], key, value }
+
+* Units of work:
+  access$0(Lcollections/LinkedHashMap$Entry;Lcollections/LinkedHashMap$Entry;)V  [
+    1: unitfor( ['after', 'before'] )
+  ]
+  addBefore(Lcollections/LinkedHashMap$Entry;)V  [
+    1: unitfor( ['after', 'before'] )
+  ]
+  recordAccess(Lcollections/HashMap;)V  [
+    1: unitfor( ['accessOrder'] )
+  ]
+
+
+=== Lcollections/LinkedHashMap$EntryIterator;
+
+* Units of work:
+  <init>(Lcollections/LinkedHashMap;)V  [
+    1: unitfor( ['header', 'modCount'] )
+  ]
+  <init>(Lcollections/LinkedHashMap;Lcollections/LinkedHashMap$EntryIterator;)V  [
+    1: unitfor( ['header', 'modCount'] )
+  ]
+
+
+=== Lcollections/LinkedHashMap$KeyIterator;
+
+* Units of work:
+  <init>(Lcollections/LinkedHashMap;)V  [
+    1: unitfor( ['header', 'modCount'] )
+  ]
+  <init>(Lcollections/LinkedHashMap;Lcollections/LinkedHashMap$KeyIterator;)V  [
+    1: unitfor( ['header', 'modCount'] )
+  ]
+
+
+=== Lcollections/LinkedHashMap$LinkedHashIterator;
+
+* Atomic sets:
+  - { lastReturned=['after', 'before', 'hash', 'key', 'next', 'value'], nextEntry=['after'], this$0=['header', 'modCount', 'size', 'table'] }
+
+* Units of work:
+  <init>(Lcollections/LinkedHashMap;)V  [
+    1: unitfor( ['header', 'modCount'] )
+  ]
+  <init>(Lcollections/LinkedHashMap;Lcollections/LinkedHashMap$LinkedHashIterator;)V  [
+    1: unitfor( ['header', 'modCount'] )
+  ]
+
+
+=== Lcollections/LinkedHashMap;
+
+* Atomic sets:
+  - { accessOrder, header=['after', 'before'], modCount, size, table=['table[]'], threshold }
+  - { table[]=['after'] }
+
+* Units of work:
+  access$0(Lcollections/LinkedHashMap;)Z  [
+    0: unitfor( ['accessOrder'] )
+  ]
+  access$1(Lcollections/LinkedHashMap;)Lcollections/LinkedHashMap$Entry;  [
+    0: unitfor( ['header'] )
+  ]
+
+
+=== Lcollections/LinkedHashSet;
+
+
+=== Lcollections/LinkedList$Entry;
+
+* Atomic sets:
+  - { element, next=['element', 'next', 'previous'], previous=['next', 'previous'] }
+
+
+=== Lcollections/LinkedList$ListItr;
+
+* Atomic sets:
+  - { lastReturned=['element', 'next', 'previous'], next=['element', 'next'], this$0=['header', 'modCount', 'size'] }
+
+* Units of work:
+  <init>(Lcollections/LinkedList;I)V  [
+    1: unitfor( ['header', 'modCount', 'size'] )
+  ]
+
+
+=== Lcollections/LinkedList;
+
+* Atomic sets:
+  - { header=['next', 'previous'], modCount, size }
+
+* Units of work:
+  access$0(Lcollections/LinkedList;)Lcollections/LinkedList$Entry;  [
+    0: unitfor( ['header'] )
+  ]
+  access$1(Lcollections/LinkedList;)I  [
+    0: unitfor( ['size'] )
+  ]
+  access$2(Lcollections/LinkedList;Lcollections/LinkedList$Entry;)Ljava/lang/Object;  [
+    0: unitfor( ['header', 'modCount', 'size'] )
+    1: unitfor( ['element', 'next', 'previous'] )
+  ]
+  addAll(ILcollections/Collection;)Z  [
+    2: unitfor( ['c', 'mutex'] )
+  ]
+  addAll(Lcollections/Collection;)Z  [
+    1: unitfor( ['c', 'mutex'] )
+  ]
+  addBefore(Ljava/lang/Object;Lcollections/LinkedList$Entry;)Lcollections/LinkedList$Entry;  [
+    2: unitfor( ['next', 'previous'] )
+  ]
+  remove(Lcollections/LinkedList$Entry;)Ljava/lang/Object;  [
+    1: unitfor( ['element', 'next', 'previous'] )
+  ]
+
+
+=== Lcollections/NoSuchElementException;
+
+
+=== Lcollections/RandomAccessSubList;
+
+* Units of work:
+  <init>(Lcollections/AbstractList;II)V  [
+    1: unitfor( ['elementCount', 'modCount'] )
+  ]
+
+
+=== Lcollections/Stack;
+
+
+=== Lcollections/SubList;
+
+* Atomic sets:
+  - { l=['elementCount', 'modCount', 'size'] }
+
+* Units of work:
+  <init>(Lcollections/AbstractList;II)V  [
+    1: unitfor( ['elementCount', 'modCount', 'size'] )
+  ]
+
+
+=== Lcollections/TreeMap$AscendingSubMap$AscendingEntrySetView;
+
+
+=== Lcollections/TreeMap$AscendingSubMap;
+
+* Units of work:
+  <init>(Lcollections/TreeMap;ZLjava/lang/Object;ZZLjava/lang/Object;Z)V  [
+    1: unitfor( ['comparator'] )
+  ]
+
+
+=== Lcollections/TreeMap$Entry;
+
+* Atomic sets:
+  - { color, key, left=['color', 'key', 'left', 'parent', 'right', 'value'], parent=['color', 'left', 'parent', 'right'], right=['color', 'key', 'left', 'parent', 'right', 'value'], value }
+
+
+=== Lcollections/TreeMap$EntryIterator;
+
+* Units of work:
+  <init>(Lcollections/TreeMap;Lcollections/TreeMap$Entry;)V  [
+    1: unitfor( ['modCount'] )
+  ]
+
+
+=== Lcollections/TreeMap$EntrySet;
+
+* Atomic sets:
+  - { this$0=['modCount', 'root'] }
+
+
+=== Lcollections/TreeMap$KeyIterator;
+
+* Units of work:
+  <init>(Lcollections/TreeMap;Lcollections/TreeMap$Entry;)V  [
+    1: unitfor( ['modCount'] )
+  ]
+
+
+=== Lcollections/TreeMap$KeySet;
+
+* Atomic sets:
+  - { m=['modCount'] }
+
+
+=== Lcollections/TreeMap$NavigableSubMap$EntrySetView;
+
+
+=== Lcollections/TreeMap$NavigableSubMap$SubMapEntryIterator;
+
+* Units of work:
+  <init>(Lcollections/TreeMap$NavigableSubMap;Lcollections/TreeMap$Entry;Lcollections/TreeMap$Entry;)V  [
+    3: unitfor( ['key'] )
+  ]
+
+
+=== Lcollections/TreeMap$NavigableSubMap$SubMapIterator;
+
+* Atomic sets:
+  - { next=['key', 'parent', 'right'], this$1=['m'] }
+
+* Units of work:
+  <init>(Lcollections/TreeMap$NavigableSubMap;Lcollections/TreeMap$Entry;Lcollections/TreeMap$Entry;)V  [
+    1: unitfor( ['m'] )
+    3: unitfor( ['key'] )
+  ]
+
+
+=== Lcollections/TreeMap$NavigableSubMap;
+
+* Atomic sets:
+  - { m=['comparator', 'modCount', 'root'] }
+
+* Units of work:
+  <init>(Lcollections/TreeMap;ZLjava/lang/Object;ZZLjava/lang/Object;Z)V  [
+    1: unitfor( ['comparator'] )
+  ]
+
+
+=== Lcollections/TreeMap$PrivateEntryIterator;
+
+* Atomic sets:
+  - { lastReturned=['color', 'left', 'parent', 'right'], next=['parent', 'right'], this$0=['modCount', 'root', 'size'] }
+
+* Units of work:
+  <init>(Lcollections/TreeMap;Lcollections/TreeMap$Entry;)V  [
+    1: unitfor( ['modCount'] )
+  ]
+
+
+=== Lcollections/TreeMap$Values;
+
+
+=== Lcollections/TreeMap;
+
+* Atomic sets:
+  - { comparator, entrySet, modCount, size }
+  - { navigableKeySet }
+  - { values }
+
+* Witnessed non-atomic fields: { root }
+
+* Units of work:
+  access$0(Lcollections/TreeMap;Lcollections/TreeMap$Entry;)V  [
+    0: unitfor( ['modCount', 'root', 'size'] )
+    1: unitfor( ['color', 'left', 'parent', 'right'] )
+  ]
+  access$1(Lcollections/TreeMap;)I  [
+    0: unitfor( ['modCount'] )
+  ]
+  colorOf(Lcollections/TreeMap$Entry;)Z  [
+    0: unitfor( ['color'] )
+  ]
+  deleteEntry(Lcollections/TreeMap$Entry;)V  [
+    1: unitfor( ['color', 'key', 'left', 'parent', 'right', 'value'] )
+  ]
+  fixAfterDeletion(Lcollections/TreeMap$Entry;)V  [
+    1: unitfor( ['color'] )
+  ]
+  fixAfterInsertion(Lcollections/TreeMap$Entry;)V  [
+    1: unitfor( ['parent'] )
+  ]
+  key(Lcollections/TreeMap$Entry;)Ljava/lang/Object;  [
+    0: unitfor( ['key'] )
+  ]
+  leftOf(Lcollections/TreeMap$Entry;)Lcollections/TreeMap$Entry;  [
+    0: unitfor( ['left'] )
+  ]
+  parentOf(Lcollections/TreeMap$Entry;)Lcollections/TreeMap$Entry;  [
+    0: unitfor( ['parent'] )
+  ]
+  putAll(Lcollections/Map;)V  [
+    1: unitfor( ['entrySet', 'm', 'mutex'] )
+  ]
+  rightOf(Lcollections/TreeMap$Entry;)Lcollections/TreeMap$Entry;  [
+    0: unitfor( ['right'] )
+  ]
+  rotateLeft(Lcollections/TreeMap$Entry;)V  [
+    1: unitfor( ['parent', 'right'] )
+  ]
+  rotateRight(Lcollections/TreeMap$Entry;)V  [
+    1: unitfor( ['left', 'parent'] )
+  ]
+  setColor(Lcollections/TreeMap$Entry;Z)V  [
+    0: unitfor( ['color'] )
+  ]
+  successor(Lcollections/TreeMap$Entry;)Lcollections/TreeMap$Entry;  [
+    0: unitfor( ['parent', 'right'] )
+  ]
+
+
+=== Lcollections/TreeSet;
+
+* Atomic sets:
+  - { m=['comparator', 'modCount', 'navigableKeySet', 'root', 'size'] }
+
+* Units of work:
+  addAll(Lcollections/Collection;)Z  [
+    1: unitfor( ['c', 'mutex'] )
+  ]
+
+
+=== Lcollections/Vector$Itr;
+
+* Atomic sets:
+  - { this$0=['elementCount', 'elementData', 'modCount'] }
+
+* Units of work:
+  <init>(Lcollections/Vector;)V  [
+    1: unitfor( ['modCount'] )
+  ]
+  <init>(Lcollections/Vector;Lcollections/Vector$Itr;)V  [
+    1: unitfor( ['modCount'] )
+  ]
+  <init>(Lcollections/Vector;Lcollections/Vector$Itr;Lcollections/Vector$Itr;)V  [
+    1: unitfor( ['modCount'] )
+  ]
+
+
+=== Lcollections/Vector$ListItr;
+
+* Units of work:
+  <init>(Lcollections/Vector;I)V  [
+    1: unitfor( ['modCount'] )
+  ]
+
+
+=== Lcollections/Vector;
+
+* Atomic sets:
+  - { capacityIncrement, elementCount, elementData=['elementData[]'], modCount }
+  - { elementData[] }
+
+* Units of work:
+  addAll(ILcollections/Collection;)Z  [
+    2: unitfor( ['c', 'mutex'] )
+  ]
+  addAll(Lcollections/Collection;)Z  [
+    1: unitfor( ['c', 'mutex'] )
+  ]
+  containsAll(Lcollections/Collection;)Z  [
+    1: unitfor( ['c'] )
+  ]
+  equals(Ljava/lang/Object;)Z  [
+    1: unitfor( ['list'] )
+  ]
+  removeAll(Lcollections/Collection;)Z  [
+    1: unitfor( ['c', 'mutex'] )
+  ]
+  retainAll(Lcollections/Collection;)Z  [
+    1: unitfor( ['c', 'mutex'] )
+  ]
+
+
+=== Lcollections/WeakHashMap$Entry;
+
+* Atomic sets:
+  - { next }
+  - { value }
+
+
+=== Lcollections/WeakHashMap$EntryIterator;
+
+* Units of work:
+  <init>(Lcollections/WeakHashMap;)V  [
+    1: unitfor( ['modCount', 'queue', 'size', 'table'] )
+  ]
+  <init>(Lcollections/WeakHashMap;Lcollections/WeakHashMap$EntryIterator;)V  [
+    1: unitfor( ['modCount', 'queue', 'size', 'table'] )
+  ]
+
+
+=== Lcollections/WeakHashMap$EntrySet;
+
+* Atomic sets:
+  - { this$0=['modCount', 'queue', 'size', 'table'] }
+
+
+=== Lcollections/WeakHashMap$HashIterator;
+
+* Atomic sets:
+  - { entry=['next'], this$0=['modCount', 'table'] }
+
+* Units of work:
+  <init>(Lcollections/WeakHashMap;)V  [
+    1: unitfor( ['modCount', 'queue', 'size', 'table'] )
+  ]
+
+
+=== Lcollections/WeakHashMap$KeySet;
+
+
+=== Lcollections/WeakHashMap$Values;
+
+
+=== Lcollections/WeakHashMap;
+
+* Atomic sets:
+  - { entrySet, modCount, queue, size, table=['table[]'], threshold }
+  - { keySet }
+  - { table[] }
+  - { values }
+
+* Units of work:
+  putAll(Lcollections/Map;)V  [
+    1: unitfor( ['entrySet', 'm', 'mutex'] )
+  ]
+
+
+=== Ledu/illinois/cs/osl/aj/collectionsfuzzer/CollectionFuzzer;
+
+
+=== Ledu/illinois/cs/osl/aj/collectionsfuzzer/FuzzEverything;
+
+
+=== Ledu/illinois/cs/osl/aj/collectionsfuzzer/Fuzzer;
+
+
+=== Ledu/illinois/cs/osl/aj/collectionsfuzzer/IterableFuzzer;
+
+
+=== Ledu/illinois/cs/osl/aj/collectionsfuzzer/ListFuzzer;
+
+
+=== Ledu/illinois/cs/osl/aj/collectionsfuzzer/MapFuzzer;
+
+* Units of work:
+  mutateEntrySet(Lcollections/Set;)V  [
+    1: unitfor( ['c'] )
+  ]
+
+
+=== Ledu/illinois/cs/osl/aj/collectionsfuzzer/SetFuzzer;
+
+
+=== Ledu/illinois/cs/osl/aj/collectionsfuzzer/SortedMapFuzzer;
+
+
+=== Ledu/illinois/cs/osl/aj/collectionsfuzzer/SortedSetFuzzer;
+

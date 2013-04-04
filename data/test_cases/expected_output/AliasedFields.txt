@@ -1,0 +1,29 @@
+
+=== Ledu/illinois/cs/osl/aj/testcases/AliasedFields$Customer;
+
+* Atomic sets:
+  - { address=['houseNumber', 'street'], person=['firstName', 'lastName'] }
+
+
+=== Ledu/illinois/cs/osl/aj/testcases/AliasedFields$WorkerThread;
+
+
+=== Ledu/illinois/cs/osl/aj/testcases/AliasedFields;
+
+
+=== Ledu/illinois/cs/osl/aj/testcases/common/Address;
+
+* Atomic sets:
+  - { houseNumber }
+  - { street }
+
+
+=== Ledu/illinois/cs/osl/aj/testcases/common/IteratingThread;
+
+
+=== Ledu/illinois/cs/osl/aj/testcases/common/Person;
+
+* Atomic sets:
+  - { firstName }
+  - { lastName }
+

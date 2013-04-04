@@ -1,0 +1,5 @@
+report
+*.meta
+*.log
+*.log.gz
+*.jar

@@ -1,0 +1,23 @@
+
+=== Ledu/illinois/cs/osl/aj/testcases/DisjointAtomicSets$MyAddress;
+
+* Atomic sets:
+  - { czLock }
+  - { shLock }
+
+
+=== Ledu/illinois/cs/osl/aj/testcases/DisjointAtomicSets$WorkerThread;
+
+
+=== Ledu/illinois/cs/osl/aj/testcases/DisjointAtomicSets;
+
+
+=== Ledu/illinois/cs/osl/aj/testcases/common/Address;
+
+* Atomic sets:
+  - { city, zip }
+  - { houseNumber, street }
+
+
+=== Ledu/illinois/cs/osl/aj/testcases/common/IteratingThread;
+

@@ -1,0 +1,57 @@
+
+=== Lweblech/spider/DownloadQueue;
+
+* Atomic sets:
+  - { boringURLsToDownload, config=['boringURLSubstrings', 'depthFirst', 'interestingURLSubstrings'], interestingURLsToDownload, urlsInQueue }
+
+* Witnessed non-atomic fields: { averageURLsToDownload }
+
+
+=== Lweblech/spider/HTMLParser;
+
+
+=== Lweblech/spider/Spider;
+
+* Atomic sets:
+  - { downloadsInProgress }
+  - { urlsDownloading }
+
+* Witnessed non-atomic fields: { config, lastCheckpoint, queue, quit, running, urlsDownloadedOrScheduled }
+
+
+=== Lweblech/spider/SpiderConfig;
+
+* Atomic sets:
+  - { basicAuthUser }
+  - { boringURLSubstrings }
+  - { depthFirst }
+  - { interestingURLSubstrings }
+  - { maxDepth }
+  - { refreshHTMLs }
+  - { spiderThreads }
+  - { urlMatch }
+  - { userAgent }
+
+* Witnessed non-atomic fields: { basicAuthPassword, checkpointInterval, saveRootDirectory }
+
+
+=== Lweblech/spider/URLGetter;
+
+* Atomic sets:
+  - { config }
+
+
+=== Lweblech/spider/URLObject;
+
+* Atomic sets:
+  - { config }
+
+
+=== Lweblech/spider/URLToDownload;
+
+
+=== Lweblech/ui/TextSpider;
+
+
+=== Lweblech/util/Log4j;
+

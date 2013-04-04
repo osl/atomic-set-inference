@@ -1,0 +1,24 @@
+
+=== Ledu/illinois/cs/osl/aj/testcases/UnaliasedFields$MyPerson;
+
+
+=== Ledu/illinois/cs/osl/aj/testcases/UnaliasedFields$Proxy;
+
+* Atomic sets:
+  - { actualPerson }
+
+
+=== Ledu/illinois/cs/osl/aj/testcases/UnaliasedFields$WorkerThread;
+
+
+=== Ledu/illinois/cs/osl/aj/testcases/UnaliasedFields;
+
+
+=== Ledu/illinois/cs/osl/aj/testcases/common/IteratingThread;
+
+
+=== Ledu/illinois/cs/osl/aj/testcases/common/Person;
+
+* Atomic sets:
+  - { firstName, lastName }
+

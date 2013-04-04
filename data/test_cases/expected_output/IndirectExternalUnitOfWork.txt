@@ -1,0 +1,31 @@
+
+=== Ledu/illinois/cs/osl/aj/testcases/IndirectExternalUnitOfWork$SecretService;
+
+* Units of work:
+  atomicSwap(Ledu/illinois/cs/osl/aj/testcases/common/Person;Ledu/illinois/cs/osl/aj/testcases/common/Person;)V  [
+    0: unitfor( ['firstName'] )
+    1: unitfor( ['firstName'] )
+  ]
+  atomicSwap(Ledu/illinois/cs/osl/aj/testcases/common/Person;Ledu/illinois/cs/osl/aj/testcases/common/Person;)V$3$synchronized  [
+    0: unitfor( ['firstName'] )
+    1: unitfor( ['firstName'] )
+  ]
+
+
+=== Ledu/illinois/cs/osl/aj/testcases/IndirectExternalUnitOfWork$WorkerThread;
+
+* Atomic sets:
+  - { p1=['firstName'], p2=['firstName'] }
+
+
+=== Ledu/illinois/cs/osl/aj/testcases/IndirectExternalUnitOfWork;
+
+
+=== Ledu/illinois/cs/osl/aj/testcases/common/IteratingThread;
+
+
+=== Ledu/illinois/cs/osl/aj/testcases/common/Person;
+
+* Atomic sets:
+  - { firstName }
+

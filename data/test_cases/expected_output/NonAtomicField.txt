@@ -1,0 +1,20 @@
+
+=== Ledu/illinois/cs/osl/aj/testcases/NonAtomicField$MyPerson;
+
+
+=== Ledu/illinois/cs/osl/aj/testcases/NonAtomicField$WorkerThread;
+
+
+=== Ledu/illinois/cs/osl/aj/testcases/NonAtomicField;
+
+
+=== Ledu/illinois/cs/osl/aj/testcases/common/IteratingThread;
+
+
+=== Ledu/illinois/cs/osl/aj/testcases/common/Person;
+
+* Atomic sets:
+  - { firstName }
+
+* Witnessed non-atomic fields: { lastName }
+

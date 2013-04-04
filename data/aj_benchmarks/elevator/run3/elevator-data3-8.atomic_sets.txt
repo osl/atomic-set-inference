@@ -1,0 +1,32 @@
+
+=== LButtonPress;
+
+
+=== LControls;
+
+* Atomic sets:
+  - { floors=['floors[]'] }
+  - { floors[]=['downFlag', 'downPeople', 'upFlag', 'upPeople'] }
+
+
+=== LElevator;
+
+* Atomic sets:
+  - { controls=['floors'] }
+
+
+=== LFloor;
+
+* Atomic sets:
+  - { downFlag, downPeople }
+  - { upFlag, upPeople }
+
+
+=== LLift;
+
+* Atomic sets:
+  - { controls=['floors'] }
+
+
+=== LRunner;
+

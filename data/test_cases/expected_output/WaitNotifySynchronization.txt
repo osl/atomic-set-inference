@@ -1,0 +1,24 @@
+
+=== Ledu/illinois/cs/osl/aj/testcases/WaitNotifySynchronization$MyPerson;
+
+
+=== Ledu/illinois/cs/osl/aj/testcases/WaitNotifySynchronization$NotifyThread;
+
+
+=== Ledu/illinois/cs/osl/aj/testcases/WaitNotifySynchronization$WorkerThread;
+
+
+=== Ledu/illinois/cs/osl/aj/testcases/WaitNotifySynchronization;
+
+
+=== Ledu/illinois/cs/osl/aj/testcases/common/IteratingThread;
+
+* Atomic sets:
+  - { iterations }
+
+
+=== Ledu/illinois/cs/osl/aj/testcases/common/Person;
+
+* Atomic sets:
+  - { firstName, lastName }
+
